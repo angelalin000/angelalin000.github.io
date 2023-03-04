@@ -1,0 +1,35 @@
+/* 設置網頁主體樣式 */
+html, body {
+    margin: 0;  /* 去掉網頁主體的預設外邊距 */
+}
+
+/* 設置網頁字體樣式 */
+html {
+    /* 使用指定字體，如果無法加載則依次使用後面的備選字體 */
+    font-family: 'Bahnschrift', Helvetica, Arial, sans-serif;
+    height: 100%;  /* 將 HTML 根元素高度設置為 100% */
+}
+
+/* 設置網頁主體樣式 */
+body {
+    overflow: hidden;  /* 隱藏主體內容溢出的部分 */
+    height: inherit;  /* 繼承父元素 HTML 的高度 */
+}
+input {
+    display: block;
+    font-size: large;
+    letter-spacing: 1.2px;
+    text-align: center;  /* 置中 */
+    position: absolute;  /* 設置標題的絕對定位，相對於最近的已定位祖先元素 */
+    margin: 10px auto;  /* 去掉標題的預設外邊距 */
+    top: 130px;
+    width: 450px;
+    left: 15%;
+    right: 15%;
+
+    border-style: none;
+    color: gray;
+    background-color: rgba(0, 0, 0, 0);
+    font-weight: bold;
+    text-shadow: 0 0 0.5px black;  /* 為標題添加文本陰影，讓其看起來更加突出 */
+}
