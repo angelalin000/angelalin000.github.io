@@ -1,6 +1,6 @@
 
 var msg = "ただ今より、何かトラブルが起こっているようです。少々お待ちください。" +
-    "Sorry, it have some problem. Please wait a second."
+    "Sorry, it has some problem. Please wait a second."
 var interval = 170;
 var index = 0;
 var n = 1;
