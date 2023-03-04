@@ -15,21 +15,26 @@ body {
     overflow: hidden;  /* 隱藏主體內容溢出的部分 */
     height: inherit;  /* 繼承父元素 HTML 的高度 */
 }
-input {
+input {  /*設定跑馬燈格式*/
+    
+    /*文字格式*/
     display: block;
     font-size: large;
     letter-spacing: 1.2px;
-    text-align: center;  /* 置中 */
-    position: absolute;  /* 設置標題的絕對定位，相對於最近的已定位祖先元素 */
+    text-align: center;
+    border-style: none;
+    color: gray;
+    background-color: rgba(0, 0, 0, 0);
+    font-weight: bold;
+    text-shadow: 0 0 0.5px black;
+    
+    /*文字位置*/
+    position: absolute;
     margin: 10px auto;  
     top: 130px;
     width: 450px;
     left: 15%;
     right: 15%;
 
-    border-style: none;
-    color: gray;
-    background-color: rgba(0, 0, 0, 0);
-    font-weight: bold;
-    text-shadow: 0 0 0.5px black;  /* 為標題添加文本陰影，讓其看起來更加突出 */
+    
 }
