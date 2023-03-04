@@ -21,7 +21,7 @@ input {
     letter-spacing: 1.2px;
     text-align: center;  /* 置中 */
     position: absolute;  /* 設置標題的絕對定位，相對於最近的已定位祖先元素 */
-    margin: 10px auto;  /* 去掉標題的預設外邊距 */
+    margin: 10px auto;  
     top: 130px;
     width: 450px;
     left: 15%;
