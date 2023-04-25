@@ -1,160 +1,160 @@
 <!-- 定義文檔類型為 HTML -->
 <!DOCTYPE html>
 <html>
-    <style>
-        .wrapper {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 100%;
-        }
-        .header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px 0 0;
-            flex: 0 0 auto;
-        }
-        .main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 80px 0;
-        }
-        .text1 {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 50px 0 10px;
-        }
-        .form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-        }
-        .in {
-            padding: 0px 10px;
-        }
-        .but {
-            font-size: medium;
-            background: #26a182;
-            color: white;
-            border-style: solid;
-            border-color: #26a182;
-            border-width: 1px;
-            border-radius: 3px;
-            height: 53px;
-            width: 320px;
-        }
-        .sign {
-            color: #26a182;
-            text-decoration: none;
-        }
-        .no-acc {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-            padding: 10px 0 0;
-        }
-        .case {
-            font-size: medium;
-            background: white;
-            color: black;
-            border-style: solid;
-            border-color: darkgray;
-            border-width: 1px;
-            border-radius: 3px;
-            height: 53px;
-            width: 320px;
-            text-align: left;
-            padding: 0 45px;
-            color: #545454;
-            background-repeat: no-repeat;
-            background-position: 3px 3px;
-        }
-        .google {
-            background-size: 11%;
-            background-position: 5px 2px;
-            background-image: url(google.png);
-        }
-        .mic {
-            background-size: 8%;
-            background-position: 9px 13px;
-            background-image: url(mic.png);
-        }
-        .acc {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 10px 0;
-        }
-        .footer {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-            padding: 10px 0 0;
-        }
-    </style>
-    <head>
-        <!-- 定義網頁字符集為 UTF-8 -->
-        <meta charset="utf-8">
-        <!-- 定義視窗的大小等於裝置的屏幕寬度 -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- 定義網頁標題 -->
-        <title>NIJISANJI waiting room</title>
-        <!-- 引入外部樣式表 -->
-        <link rel="stylesheet" href="style.css">
+<style>
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100%;
+    }
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0 0;
+        flex: 0 0 auto;
+    }
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 80px 0;
+    }
+    .text1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 50px 0 10px;
+    }
+    .form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+    .in {
+        padding: 0px 10px;
+    }
+    .but {
+        font-size: medium;
+        background: #26a182;
+        color: white;
+        border-style: solid;
+        border-color: #26a182;
+        border-width: 1px;
+        border-radius: 3px;
+        height: 53px;
+        width: 320px;
+    }
+    .sign {
+        color: #26a182;
+        text-decoration: none;
+    }
+    .no-acc {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        padding: 10px 0 0;
+    }
+    .case {
+        font-size: medium;
+        background: white;
+        color: black;
+        border-style: solid;
+        border-color: darkgray;
+        border-width: 1px;
+        border-radius: 3px;
+        height: 53px;
+        width: 320px;
+        text-align: left;
+        padding: 0 45px;
+        color: #545454;
+        background-repeat: no-repeat;
+        background-position: 3px 3px;
+    }
+    .google {
+        background-size: 11%;
+        background-position: 5px 2px;
+        background-image: url(google.png);
+    }
+    .mic {
+        background-size: 8%;
+        background-position: 9px 13px;
+        background-image: url(mic.png);
+    }
+    .acc {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px 0;
+    }
+    .footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        padding: 10px 0 0;
+    }
+</style>
+<head>
+    <!-- 定義網頁字符集為 UTF-8 -->
+    <meta charset="utf-8">
+    <!-- 定義視窗的大小等於裝置的屏幕寬度 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 定義網頁標題 -->
+    <title>https://auth0.openai.com/u/login/identifier?state=hKFo2SA4a3JhRzBiM3dzSUtYemVjVmNyR1NGc0VyS1F4SHJUbqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIEhTUmFGdmcxb1F5ekZMNnhYeW1RM0J4cjNtLWRNeTg0o2NpZNkgVGRKSWNiZTE2V29USHROOTVueXl3aDVFNHlPbzZJdEc</title>
+    <!-- 引入外部樣式表 -->
+    <link rel="stylesheet" href="style.css">
 
-    </head>
+</head>
 
-    <body>
-        <div class = "wrapper">
-            <!--頁首-->
-            <header class="header">
-                <img src = "logo.jpg" height = 40px>
-            </header>
+<body>
+<div class = "wrapper">
+    <!--頁首-->
+    <header class="header">
+        <img src = "logo.jpg" height = 40px>
+    </header>
 
-            <main class="main">
-                <h1 class="text1">Welcome back</h1>
-                <form class="form">
-                    <input class="in" type="email" size="25" placeholder="Email address">
-                    <button class="but" onmouseover="javascript: con_In(this)"onmouseout="javascript: con_Out(this)">Continue</button>
-                </form>
-                <div class="no-acc">
-                    <h2>Don't have an account? </h2>
-                    <a class="sign" href="https://auth0.openai.com/u/signup/identifier?state=hKFo2SB1RkpyR2Y0UkFyMDV4Q0R6VTJrcjVFbHVlYkx4LXlVRqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHlTUFp6OVpJNnRxb005bnN2Vndsc0ZEU096X1dfcm9uo2NpZNkgVGRKSWNiZTE2V29USHROOTVueXl3aDVFNHlPbzZJdEc">Sign up</a>
-                </div>
-                <div class="no-acc">
-                    <h3></h3>
-                    <h2>OR</h2>
-                    <h3></h3>
-                </div>
-                <form class="acc">
-                    <button class="case google" type="submit" onmouseover="javascript: cas_In(this)"onmouseout="javascript: cas_Out(this)">Continue with Google</button>
-                    <button class="case mic" type="submit" onmouseover="javascript: cas_In(this)"onmouseout="javascript: cas_Out(this)">Continue with Microsoft Account</button>
-                </form>
-
-            </main>
-
-            <!--頁尾-->
-            <footer class="footer">
-                <a class="sign" href="https://openai.com/policies/terms-of-use">Terms of use</a>
-                <p>|</p>
-                <a class="sign" href="https://openai.com/policies/privacy-policy">Privacy policy</a>
-
-            </footer>
-
-            <!-- 引入外部 JavaScript 文件 -->
-            <script src="main.js"></script>
+    <main class="main">
+        <h1 class="text1">Welcome back</h1>
+        <form class="form">
+            <input class="in" type="email" size="25" placeholder="Email address">
+            <button class="but" onmouseover="javascript: con_In(this)"onmouseout="javascript: con_Out(this)">Continue</button>
+        </form>
+        <div class="no-acc">
+            <h2>Don't have an account? </h2>
+            <a class="sign" href="https://auth0.openai.com/u/signup/identifier?state=hKFo2SB1RkpyR2Y0UkFyMDV4Q0R6VTJrcjVFbHVlYkx4LXlVRqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHlTUFp6OVpJNnRxb005bnN2Vndsc0ZEU096X1dfcm9uo2NpZNkgVGRKSWNiZTE2V29USHROOTVueXl3aDVFNHlPbzZJdEc">Sign up</a>
         </div>
+        <div class="no-acc">
+            <h3></h3>
+            <h2>OR</h2>
+            <h3></h3>
+        </div>
+        <form class="acc">
+            <button class="case google" type="submit" onmouseover="javascript: cas_In(this)"onmouseout="javascript: cas_Out(this)">Continue with Google</button>
+            <button class="case mic" type="submit" onmouseover="javascript: cas_In(this)"onmouseout="javascript: cas_Out(this)">Continue with Microsoft Account</button>
+        </form>
 
-    </body>
+    </main>
+
+    <!--頁尾-->
+    <footer class="footer">
+        <a class="sign" href="https://openai.com/policies/terms-of-use">Terms of use</a>
+        <p>|</p>
+        <a class="sign" href="https://openai.com/policies/privacy-policy">Privacy policy</a>
+
+    </footer>
+
+    <!-- 引入外部 JavaScript 文件 -->
+    <script src="main.js"></script>
+</div>
+
+</body>
 </html>
