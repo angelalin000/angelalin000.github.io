@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  .canva {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+
+  }
+  .in_form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 40px 0 50px 0;
+  }
+  .lab {
+    padding: 0 0 0 30px;
+    color: #355fa7;
+  }
+  .in {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-style: solid;
+    border-color: #355fa7;
+    border-width: 1px;
+    border-radius: 3px;
+  }
+  .but {
+    font-size: medium;
+    background: #355fa7;
+    color: white;
+    border-style: solid;
+    border-color: #6c98e3;
+    border-width: 1px;
+    border-radius: 3px;
+    gap: 100px;
+    width: 70px;
+  }
+  .output {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0 0 0;
+
+  }
+  .but2 {
+    font-size: medium;
+    background: #36b4cd;
+    color: white;
+    border-style: solid;
+    border-color: #83d0e0;
+    border-width: 1px;
+    border-radius: 3px;
+    width: 400px;
+    padding: 0 0 0 30px;
+
+  }
+  .show {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 15px 0;
+  }
+  .out {
+    color: #3d96b4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px 150px;
+    padding: 40px 0 20px 0;
+  }
+  .data {
+    color: #76bed6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px 155px;
+    padding: 10px 0;
+  }
+</style>
+<head>
+  <meta charset="UTF-8">
+  <title>HW4</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+<form id="movies" action="http://localhost:3000" method="post" class="in_form">
+  <label for="date" class="lab">Date:</label>
+  <input type="text" id="date" name="date" class="in" placeholder="ex : 111/11">
+  <label for="produce" class="lab" >Produce:</label>
+  <input type="text" id="produce" name="produce" class="in" placeholder="ex : 水費">
+  <label for="price" class="lab">Price:</label>
+  <input type="text" id="price" name="price" class="in" placeholder="ex : 95.5">
+  <button type="submit" class="but">Enter</button>
+</form>
+
+<hr color="#559ccf" width="60%" size="1px"/>
+<hr color="#559ccf" width="60%" size="1px"/>
+
+
+<div id="app" class="output">
+  <button v-on:click="handleClick" class="but2">Show</button>
+  <table class="show">
+    <thead>
+    <tr class="out">
+      <th>ID</th>
+      <th>Date</th>
+      <th>Produce</th>
+      <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr v-for="item in data" class="data">
+      <td>{{ item.id }}</td>
+      <td>{{ item.date }}</td>
+      <td>{{ item.produce }}</td>
+      <td>{{ item.price }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        data: []
+      };
+    },
+    methods: {
+      async handleClick() {
+        console.log("data");
+
+        const url = "http://localhost:3000"; // 資料傳送到的 URL
+        try {
+          const response = await fetch(url, {
+            method: 'GET',
+          });
+          const res_data = await response.json();
+          this.data = res_data ;
+          console.log("成功", res_data );
+        } catch (error) {
+          console.log("錯誤", error);
+        }
+      }
+    }
+  });
+
+  app.mount('#app');
+</script>
+
+</body>
+</html>
