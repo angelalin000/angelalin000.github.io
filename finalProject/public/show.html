@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    .in_form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px 10px;
+        padding: 40px 0 50px 0;
+    }
+    .lab {
+        padding: 0 0 0 30px;
+        color: #6c98e3;
+    }
+    .in {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-style: solid;
+        border-color: #6c98e3;
+        border-width: 1px;
+        border-radius: 3px;
+    }
+    .but {
+        font-size: medium;
+        background: #6c98e3;
+        color: white;
+        border-style: solid;
+        border-color: #6c98e3;
+        border-width: 1px;
+        border-radius: 3px;
+        gap: 100px 50px;
+        width: 100px;
+    }
+    .output {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 50px 0 0 0;
+
+    }
+    .show {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+
+        padding: 10px 0;
+    }
+    .out {
+        color: #6c98e3;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        gap: 0px 100px;
+        padding: 40px 0;
+        width: 200px;
+        text-align: center;
+    }
+    .data {
+        color: #6c98e3;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        gap: 0px 100px;
+        padding: 10px 0;
+        width: 200px;
+        text-align: center;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+<body>
+<div id="app" class="output">
+    <div class="in_form">
+        <label for="email" class="lab">Input email: </label>
+        <input type="text" id="email" name="email" class="in" placeholder="ex : abc@gmail.com">
+        <button v-on:click="handleClick2" class="but">Select</button>
+        <button v-on:click="handleClick" class="but">Show All</button>
+
+    </div>
+    <p v-if="errorMessage" class="lab">{{ errorMessage }}</p>
+
+    <hr color="#6c98e3" width="60%" size="1px"/>
+    <hr color="#6c98e3" width="60%" size="1px"/>
+
+    <table class="show">
+        <thead>
+        <tr class="out">
+            <th>Email</th>
+            <th>Password</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="item in data" class="data">
+            <td>{{ item.email }}</td>
+            <td>{{ item.password }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    const app = Vue.createApp({
+        data() {
+            return {
+                data: [],
+                errorMessage: ""
+            };
+        },
+        methods: {
+            async handleClick() {
+                console.log("data");
+
+                const url = "http://localhost:3000"; // 資料傳送到的 URL
+                try {
+                    const response = await fetch(url, {
+                        method: 'GET',
+                    });
+                    const res_data = await response.json();
+                    this.data = res_data ;
+                    console.log("成功", res_data );
+                } catch (error) {
+                    console.log("錯誤", error);
+                }
+            },
+            async handleClick2() {
+                var email = document.getElementById("email").value;
+                const url = `http://localhost:3000/select?param1=${email}`; // 資料傳送到的 URL
+                try {
+                    const response = await fetch(url, {
+                        method: 'GET',
+                    });
+                    if (response.ok) {
+                        const res_data = await response.json();
+                        if (res_data.message === "查不到資料") {
+                            // 在網頁上設置 errorMessage 屬性為「查不到資料」
+                            this.errorMessage = "查不到資料";
+                        } else {
+                            this.data = res_data;
+                            this.errorMessage = "";
+                            console.log("成功", res_data);
+                        }
+                    }
+
+                } catch (error) {
+                    console.log("錯誤", error);
+                }
+            }
+        }
+    });
+    app.mount('#app');
+</script>
+</body>
+</html>
